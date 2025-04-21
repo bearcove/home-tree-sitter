@@ -1,0 +1,62 @@
+{
+  "name": "tree-sitter-diff",
+  "version": "0.0.1",
+  "description": "A tree-sitter grammar for diffs",
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "scripts": {
+    "test": "tree-sitter test",
+    "format": "prettier --trailing-comma es5 --write grammar.js",
+    "format-check": "prettier --trailing-comma es5 --check grammar.js",
+    "install": "node-gyp-build",
+    "prebuildify": "prebuildify --napi --strip"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-mikedavis/tree-sitter-diff.git"
+  },
+  "keywords": [
+    "tree-sitter",
+    "parser",
+    "lexer",
+    "diff"
+  ],
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
+  ],
+  "author": "the-mikedavis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/the-mikedavis/tree-sitter-diff/issues"
+  },
+  "homepage": "https://github.com/the-mikedavis/tree-sitter-diff#readme",
+  "dependencies": {
+    "node-addon-api": "^7.1.0",
+    "node-gyp-build": "^4.8.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.21.0"
+  },
+  "peerDependenciesMeta": {
+    "tree_sitter": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "prettier": "^2.5.1",
+    "tree-sitter-cli": "^0.20.7",
+    "prebuildify": "^6.0.0"
+  },
+  "tree-sitter": [
+    {
+      "file-types": [
+        "diff"
+      ]
+    }
+  ]
+}

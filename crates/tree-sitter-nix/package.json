@@ -1,0 +1,62 @@
+{
+  "name": "tree-sitter-nix",
+  "version": "0.0.2",
+  "description": "Tree Sitter grammar for Nix",
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "scripts": {
+    "build": "npm run generate && node-gyp build",
+    "generate": "tree-sitter generate --abi 13",
+    "test": "tree-sitter test",
+    "install": "node-gyp-build",
+    "prebuildify": "prebuildify --napi --strip"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nix-community/tree-sitter-nix.git"
+  },
+  "author": "Charles Strahan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nix-community/tree-sitter-nix/issues"
+  },
+  "homepage": "https://github.com/nix-community/tree-sitter-nix#readme",
+  "dependencies": {
+    "node-addon-api": "^7.1.0",
+    "node-gyp-build": "^4.8.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.21.0"
+  },
+  "peerDependenciesMeta": {
+    "tree_sitter": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "prebuildify": "^6.0.0"
+  },
+  "tree-sitter": [
+    {
+      "file-types": [
+        "nix"
+      ],
+      "highlights": [
+        "queries/highlights.scm"
+      ],
+      "injection-regex": "^(nix)$",
+      "locals": [
+        "queries/locals.scm"
+      ],
+      "scope": "source.nix"
+    }
+  ],
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
+  ]
+}

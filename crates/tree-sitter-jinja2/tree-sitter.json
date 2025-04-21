@@ -1,0 +1,35 @@
+{
+  "grammars": [
+    {
+      "name": "jinja2",
+      "camelcase": "Jinja2",
+      "scope": "source.jija2",
+      "path": ".",
+      "file-types": [
+        "jinja",
+        "jinja2"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "0.0.9",
+    "license": "GPL-3.0-or-later",
+    "description": "Tree-sitter grammar for Jinja2 templates",
+    "authors": [
+      {
+        "name": "Stephan Seitz"
+      }
+    ],
+    "links": {
+      "repository": "git://github.com/theHamsta/tree-sitter-jinja2.git"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}

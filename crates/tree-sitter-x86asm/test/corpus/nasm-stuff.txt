@@ -1,0 +1,85 @@
+================================================================================
+dumb comments
+================================================================================
+
+; dumb comment
+_start:     mov     rax, 2
+            mov     rdi, path ; trailing comment
+            xor     rsi, rsi
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (comment)
+  (directive
+    (label
+      (label_name
+        (identifier))
+      (directive
+        (ins
+          (mnemonic)
+          (operand_args
+            (operand
+              (register))
+            (operand
+              (integer_literal)))))))
+  (directive
+    (ins
+      (mnemonic)
+      (operand_args
+        (operand
+          (register))
+        (operand
+          (operand_ident)))))
+  (comment)
+  (directive
+    (ins
+      (mnemonic)
+      (operand_args
+        (operand
+          (register))
+        (operand
+          (register))))))
+
+================================================================================
+hard comments
+================================================================================
+
+_start:     mov     rax, 2      ; "open"
+            mov     rdi, path   ; 
+            xor     rsi, rsi    ; O_RDONLY
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (directive
+    (label
+      (label_name
+        (identifier))
+      (directive
+        (ins
+          (mnemonic)
+          (operand_args
+            (operand
+              (register))
+            (operand
+              (integer_literal)))))))
+  (comment)
+  (directive
+    (ins
+      (mnemonic)
+      (operand_args
+        (operand
+          (register))
+        (operand
+          (operand_ident)))))
+  (comment)
+  (directive
+    (ins
+      (mnemonic)
+      (operand_args
+        (operand
+          (register))
+        (operand
+          (register)))))
+  (comment))

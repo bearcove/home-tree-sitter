@@ -1,0 +1,83 @@
+================================================================================
+movdqa
+================================================================================
+
+movdqa rax, rax
+vmovdqa rax, rax
+push rsi
+endbr32
+endbr64
+ret
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (directive
+    (ins
+      (mnemonic)
+      (operand_args
+        (operand
+          (register))
+        (operand
+          (register)))))
+  (directive
+    (ins
+      (mnemonic)
+      (operand_args
+        (operand
+          (register))
+        (operand
+          (register)))))
+  (directive
+    (ins
+      (mnemonic)
+      (operand_args
+        (operand
+          (register)))))
+  (directive
+    (ins
+      (mnemonic)))
+  (directive
+    (ins
+      (mnemonic)))
+  (directive
+    (ins
+      (mnemonic))))
+
+================================================================================
+movabs
+================================================================================
+
+0000000000000000 <_start>:
+   0:   bf 01 00 00 00          mov    edi,0x1
+   5:   48 be 00 00 00 00 00    movabs rsi,0x0
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (directive
+    (objdump_section_label
+      (objdump_addr)
+      (identifier)))
+  (directive
+    (objdump_offset_label
+      (objdump_addr)
+      (objdump_machine_code_bytes)
+      (ins
+        (mnemonic)
+        (operand_args
+          (operand
+            (register))
+          (operand
+            (integer_literal))))))
+  (directive
+    (objdump_offset_label
+      (objdump_addr)
+      (objdump_machine_code_bytes)
+      (ins
+        (mnemonic)
+        (operand_args
+          (operand
+            (register))
+          (operand
+            (integer_literal)))))))

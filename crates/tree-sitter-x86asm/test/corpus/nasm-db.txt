@@ -1,0 +1,22 @@
+================================================================================
+string
+================================================================================
+
+path:      db     "/etc/hosts", 0 ; null-terminated
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (directive
+    (label
+      (label_name
+        (identifier))
+      (directive
+        (builtin
+          (builtin_kw)
+          (operand_args
+            (operand
+              (string_literal))
+            (operand
+              (integer_literal)))))))
+  (comment))

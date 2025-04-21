@@ -1,0 +1,69 @@
+{
+  "name": "tree-sitter-toml",
+  "version": "0.5.1",
+  "description": "TOML grammar for tree-sitter",
+  "keywords": [
+    "parser",
+    "lexer"
+  ],
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "repository": "https://github.com/ikatyang/tree-sitter-toml",
+  "homepage": "https://github.com/ikatyang/tree-sitter-toml#readme",
+  "author": {
+    "name": "Ika",
+    "email": "ikatyang@gmail.com",
+    "url": "https://github.com/ikatyang"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "yarn tree-sitter test",
+    "prepack": "yarn tree-sitter generate",
+    "release": "standard-version --commit-all",
+    "tree-sitter": "./tree-sitter/target/release/tree-sitter",
+    "install": "node-gyp-build",
+    "prebuildify": "prebuildify --napi --strip"
+  },
+  "standard-version": {
+    "preset": "angular",
+    "scripts": {
+      "postbump": "rm -r docs && node scripts/generate-playground.js && git add docs"
+    }
+  },
+  "dependencies": {
+    "node-addon-api": "^7.1.0",
+    "node-gyp-build": "^4.8.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.21.0"
+  },
+  "peerDependenciesMeta": {
+    "tree_sitter": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "regexp-util": "1.2.2",
+    "standard-version": "7.0.0",
+    "prebuildify": "^6.0.0"
+  },
+  "files": [
+    "/src/",
+    "/queries/",
+    "/bindings/node/",
+    "/binding.gyp",
+    "/grammar.js"
+  ],
+  "tree-sitter": [
+    {
+      "scope": "source.toml",
+      "file-types": [
+        "toml"
+      ],
+      "highlights": [
+        "queries/highlights.scm"
+      ],
+      "injection-regex": "^toml$"
+    }
+  ]
+}

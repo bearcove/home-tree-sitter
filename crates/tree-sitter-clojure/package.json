@@ -1,0 +1,43 @@
+{
+  "name": "tree-sitter-clojure",
+  "version": "0.0.13",
+  "description": "Clojure grammar for tree-sitter",
+  "tree-sitter": [
+    {
+      "scope": "source.clojure",
+      "file-types": [
+        "bb",
+        "clj",
+        "cljc",
+        "cljs"
+      ]
+    }
+  ],
+  "dependencies": {
+    "node-gyp-build": "^4.8.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.21.0"
+  },
+  "peerDependenciesMeta": {
+    "tree_sitter": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "prebuildify": "^6.0.0"
+  },
+  "scripts": {
+    "install": "node-gyp-build",
+    "prebuildify": "prebuildify --napi --strip"
+  },
+  "types": "bindings/node",
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
+  ]
+}
